@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refeitório IFPI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li onclick="showPage('menu')">Início</li>
+        <li onclick="showPage('cardapio')">Cardápio</li>
+        <li onclick="showPage('horario')">Horários</li>
+      </ul>
+    </nav>
+
+    <main>
+      <header>
+        <h1 id="page-title">Início</h1>
+      </header>
+
+      <section id="menu" class="page active">
+        <div class="inicio-content">
+          <p class="texto-inicio">
+            O refeitório do IFPI – Campus Teresina Central é um espaço essencial
+            para a comunidade acadêmica, oferecendo alimentação aos alunos durante
+            o período letivo. Além de contribuir para o bem-estar dos estudantes,
+            o refeitório desempenha um papel importante na inclusão social,
+            proporcionando acesso a refeições de qualidade.
+          </p>
+          <img src="ImagemRefetorio001.jpeg" alt="Imagem Refeitório" />
+        </div>
+      </section>
+
+      <section id="cardapio" class="page">
+        <h2>Cardápio da Semana</h2>
+        <div id="tabela-cardapio">Carregando cardápio...</div>
+      </section>
+
+      <section id="horario" class="page">
+        <div class="horario-content">
+          <p class="texto-inicio">
+            O horário de funcionamento do refeitório é das 8h às 12h e das 14h às
+            17h, de segunda a sexta-feira. Durante esses períodos, os alunos podem
+            usufruir de refeições balanceadas e acessíveis, promovendo uma
+            alimentação saudável e adequada ao ritmo acadêmico.
+          </p>
+          <img src="ImagemRefetorio002.jpeg" alt="Imagem do Refeitório">
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

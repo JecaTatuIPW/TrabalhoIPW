@@ -16,7 +16,7 @@ function showPage(id) {
 }
 
 async function carregarCardapio() {
-  const res = await fetch('cardapio.json');
+  const res = await fetch('https://cardapioifpi.rf.gd/cardapio.json');
   const dados = await res.json();
 
   const dias = ['segunda', 'terca', 'quarta', 'quinta', 'sexta'];

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Atualizar Cardápio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Atualizar Cardápio da Semana</h2>
+  <form id="form-cardapio">
+  <textarea name="segunda" placeholder="Segunda-feira"></textarea>
+  <textarea name="terca" placeholder="Terça-feira"></textarea>
+  <textarea name="quarta" placeholder="Quarta-feira"></textarea>
+  <textarea name="quinta" placeholder="Quinta-feira"></textarea>
+  <textarea name="sexta" placeholder="Sexta-feira"></textarea>
+  <button type="submit">Salvar</button>
+</form>
+
+<div id="mensagem-status"></div>
+
+<script>
+document.getElementById("form-cardapio").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = new FormData(this);
+  const resposta = await fetch("https://cardapioifpi.rf.gd/salvar.php", {
+    method: "POST",
+    body: form,
+    mode: "no-cors" // necessário em muitos casos, mas oculta a resposta
+  });
+
+  document.getElementById("mensagem-status").innerText = "Enviado! (a resposta pode não ser visível por no-cors)";
+});
+</script>
+</body>
+</html>

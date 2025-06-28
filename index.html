@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refeitório IFPI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <div class="logo-sidebar">
+        <img src="logo-ifpi.png" alt="Logo IFPI" class="sidebar-logo">
+      </div>
+      <h2>Menu</h2>
+      <ul>
+        <li onclick="showPage('menu')">
+          <i class="fas fa-home"></i> Início
+        </li>
+        <li onclick="showPage('cardapio')">
+          <i class="fas fa-utensils"></i> Cardápio
+        </li>
+        <li onclick="showPage('horario')">
+          <i class="fas fa-clock"></i> Horários
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <header>
+        <div class="header-content">
+          <h1 id="page-title">Início</h1>
+          <img src="logo-ifpi.png" alt="Logo IFPI" class="header-logo">
+        </div>
+      </header>
+
+      <section id="menu" class="page active">
+        <div class="inicio-content">
+          <p class="texto-inicio">
+            O refeitório do IFPI – Campus Teresina Central é um espaço essencial
+            para a comunidade acadêmica, oferecendo alimentação balanceada e de qualidade aos alunos durante
+            o período letivo. Além de contribuir para o bem-estar dos estudantes,
+            o refeitório desempenha um papel importante na inclusão social,
+            proporcionando acesso a refeições nutritivas a preços acessíveis.
+          </p>
+          <div class="image-container">
+            <img src="ImagemRefetorio001.jpeg" alt="Imagem Refeitório" />
+            <div class="image-caption">Espaço moderno e acolhedor do nosso refeitório</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cardapio" class="page">
+        <h2><i class="fas fa-clipboard-list"></i> Cardápio da Semana</h2>
+        <div class="cardapio-info">
+          <p>Confira abaixo o cardápio semanal, elaborado por nutricionistas para garantir uma alimentação balanceada.</p>
+        </div>
+        <div id="tabela-cardapio">Carregando cardápio...</div>
+      </section>
+
+      <section id="horario" class="page">
+        <div class="horario-content">
+          <h2><i class="fas fa-clock"></i> Horário de Funcionamento</h2>
+          <p class="texto-inicio">
+            O refeitório está aberto para atender a comunidade acadêmica nos seguintes horários:
+          </p>
+          <div class="horario-detalhes">
+            <div class="horario-item">
+              <i class="fas fa-sun"></i>
+              <span>Manhã: 8h às 12h</span>
+            </div>
+            <div class="horario-item">
+              <i class="fas fa-cloud-sun"></i>
+              <span>Tarde: 14h às 17h</span>
+            </div>
+            <div class="horario-nota">
+              <i class="fas fa-info-circle"></i>
+              <span>De segunda a sexta-feira, durante o período letivo</span>
+            </div>
+          </div>
+          <div class="image-container">
+            <img src="ImagemRefetorio002.jpeg" alt="Imagem do Refeitório">
+            <div class="image-caption">Nosso espaço durante o horário de almoço</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

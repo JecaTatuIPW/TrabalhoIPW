@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Atualizar Cardápio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <h2>Atualizar Cardápio da Semana</h2>
+  <form id="form-cardapio">
+    <textarea name="segunda" placeholder="Segunda-feira"></textarea>
+    <textarea name="terca" placeholder="Terça-feira"></textarea>
+    <textarea name="quarta" placeholder="Quarta-feira"></textarea>
+    <textarea name="quinta" placeholder="Quinta-feira"></textarea>
+    <textarea name="sexta" placeholder="Sexta-feira"></textarea>
+    <button type="submit">Salvar</button>
+  </form>
+
+  <div id="mensagem-status"></div>
+
+<script>
+document.getElementById("form-cardapio").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const dados = {
+    segunda: this.segunda.value.split("\n").filter(Boolean),
+    terca: this.terca.value.split("\n").filter(Boolean),
+    quarta: this.quarta.value.split("\n").filter(Boolean),
+    quinta: this.quinta.value.split("\n").filter(Boolean),
+    sexta: this.sexta.value.split("\n").filter(Boolean),
+  };
+
+  try {
+    const res = await fetch("https://refeitorio-ifpi-default-rtdb.firebaseio.com/cardapio.json", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dados)
+    });
+
+    if (!res.ok) throw new Error("Erro ao salvar");
+    document.getElementById("mensagem-status").innerText = "✅ Cardápio salvo com sucesso!";
+  } catch (erro) {
+    document.getElementById("mensagem-status").innerText = "❌ Erro ao salvar: " + erro.message;
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #003d2b;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: linear-gradient(180deg, #003d2b 0%, #00281e 100%);
+  color: white;
+  width: 250px;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-sidebar {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.sidebar h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background-color: #4caf50;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.sidebar li:hover {
+  background-color: #00593b;
+  transform: translateX(5px);
+}
+
+.sidebar li i {
+  width: 20px;
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  padding: 30px;
+  background-color: #ffffff;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+}
+
+.page {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.image-container img {
+  max-width: 700px;      
+  width: 100%;           
+  height: auto;
+  border: 3px solid #062903; 
+  border-radius: 12px;    
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.image-caption {
+  margin-top: 10px;
+  font-style: italic;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+  border: 1px solid #e0e0e0;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background: linear-gradient(135deg, #00695c 0%, #003d2b 100%);
+  color: white;
+  font-weight: 500;
+}
+
+td {
+  background-color: #f8f9fa;
+}
+
+tr:nth-child(even) td {
+  background-color: #ffffff;
+}
+
+.texto-inicio {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.cardapio-info {
+  background-color: #f0f4f7;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border-left: 4px solid #00695c;
+}
+
+.horario-content h2 {
+  color: #003d2b;
+  margin-bottom: 20px;
+}
+
+.horario-detalhes {
+  background-color: #f0f4f7;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.horario-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.horario-item i {
+  color: #00695c;
+  font-size: 1.2rem;
+}
+
+.horario-nota {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.horario-nota i {
+  color: #00695c;
+}
+
+#tabela-cardapio ul {
+  padding-left: 15px;
+  text-align: left;
+  list-style-type: none;
+}
+
+#tabela-cardapio li {
+  padding: 5px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+#tabela-cardapio li::before {
+  content: '•';
+  color: #00695c;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .header-logo {
+    height: 50px;
+  }
+}
+
+.inicio-content
+ {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.inicio-content .texto-inicio,
+ .texto-inicio {
+  flex: 1;
+  min-width: 250px;
+}
+
+.inicio-content .image-container
+ {
+  flex: 1;
+  min-width: 250px;
+  text-align: right;
+}
